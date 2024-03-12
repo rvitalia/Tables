@@ -1,0 +1,28 @@
+.fourth {}
+
+.fourth__inner {
+    display: grid;
+    grid-template-columns: 33% 67%;
+    column-gap: 5px;
+
+    & li {
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.05);
+        background: #f7f7f7;
+        border: 3px solid #fcfcfc;
+        border-radius: 7px;
+        padding: 28px;
+        height: 100%;
+    }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+.fourth__inner__title {}
+
+.fourth__inner__link {}
+
+.fourth__inner__download {}
