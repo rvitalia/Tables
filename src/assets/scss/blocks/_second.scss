@@ -7,6 +7,11 @@
     display: flex;
     column-gap: 5px;
 
+    @include for-desktop{
+         flex-wrap: wrap;
+         justify-content: space-around;
+    }
+
     & li {
         flex-grow: 1;
         border: 3px solid #fcfcfc;
@@ -14,6 +19,11 @@
         padding: 28px;
         box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.05);
         background: #f7f7f7;
+
+        @include for-desktop{
+            flex-grow: unset;
+
+        }
     }
 }
 
@@ -33,7 +43,12 @@
     flex-grow: 1;
     font-weight: 600;
     font-size: 20px;
-    color: #191919;}
+    color: #191919;
+    
+    @include small-tablet{
+        font-size: 18px;
+    }
+}
 
 .second__inner__link {}
 

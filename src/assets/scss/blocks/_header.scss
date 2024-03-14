@@ -6,6 +6,14 @@
     display: flex;
     column-gap: 15px;
     justify-content: space-between;
+    align-items: center;
+
+
+    @include for-desktop{
+        flex-wrap: wrap;
+        row-gap: 15px;
+        justify-content: space-around;
+    }
 }
 
 .header__inner__date {
@@ -38,11 +46,19 @@
     display: flex;
     column-gap: 60px;
 
+    @include mobile{
+        column-gap: 20px;
+    }
+
     & li {
         font-weight: 600;
         font-size: 26px;
         line-height: 138%;
         color: rgba(25, 25, 25, 0.8);
+
+        @include mobile{
+            font-size: 18px;
+        }
     }
 }
  /* Стили для селекта */
@@ -50,6 +66,9 @@
     position: relative;
     // min-width: 200px;
     // border: 1px solid #c6c6c6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
   }
   .options-list {

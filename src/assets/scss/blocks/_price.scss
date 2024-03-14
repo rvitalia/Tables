@@ -5,7 +5,12 @@
 .price__inner {
     display: flex;
     column-gap: 5px;
-
+    
+    @include for-desktop{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
     &>li {
         border-radius: 7px;
         padding: 28px 30px;
@@ -14,9 +19,13 @@
         justify-content: flex-start;
 align-items: flex-start;
         background: #eaf9ff;
-        // flex: 1;
-        // flex-shrink: 0;
-        // flex-grow: 1;
+
+        @include for-desktop{
+            flex: 1 !important;
+            flex-shrink: 0 !important;
+            flex-grow: 1 !important;
+        }
+
     }
 }
 
