@@ -5,6 +5,7 @@
 .header__inner {
     display: flex;
     column-gap: 15px;
+    justify-content: space-between;
 }
 
 .header__inner__date {
@@ -18,6 +19,11 @@
     padding: 10px 15px;
 }
 
+.header__inner__item{
+    display: flex;
+    column-gap: 30px;
+}
+
 .header__inner__search {
     background: #efefef;
     border: 1px solid #c6c6c6;
@@ -29,15 +35,69 @@
 }
 
 .header__inner__title {
-    flex-grow: 1;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    column-gap: 60px;
 
-    & h2 {
+    & li {
         font-weight: 600;
         font-size: 26px;
         line-height: 138%;
         color: rgba(25, 25, 25, 0.8);
     }
 }
+ /* Стили для селекта */
+ .select-container {
+    position: relative;
+    // min-width: 200px;
+    // border: 1px solid #c6c6c6;
+
+  }
+  .options-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    // max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    display: none;
+    top: 110%;
+    left: 0;
+    min-width: max-content;
+   
+
+    & li+li{
+        margin-top: 10px;
+    }
+
+    & li{
+        display: flex;
+        justify-content: space-between;
+    }
+  }
+  .option {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+//   .option:hover {
+//     background-color: #e0f2f1;
+//   }
+ /* Стили для чекбокса */
+//  .checkbox {
+//     position: absolute;
+//     left: 0;
+//     opacity: 0;
+//   }
+//   .checkbox + label {
+//     cursor: pointer;
+//     padding-left: 20px;
+//     position: relative;
+//   }
+//   .checkbox:checked + label::before {
+//     content: "\2714"; /* Unicode символ галочки */
+//     display: inline-block;
+//     position: absolute;
+//     left: 0;
+//   }
