@@ -3,13 +3,13 @@
 .fourth__inner {
     display: grid;
     grid-template-columns: 33% 67%;
-    column-gap: 5px;
+    gap: 5px;
 
     @include for-desktop{
      display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        row-gap: 5px;
+        gap: 5px;
     }
 
     & li {
@@ -25,7 +25,7 @@
 .column {
     display: flex;
     flex-direction: column;
-    row-gap: 3px;
+    gap: 5px;
 }
 
 .fourth__inner__title {}

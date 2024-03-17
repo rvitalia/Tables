@@ -4,7 +4,7 @@
 
 .price__inner {
     display: flex;
-    column-gap: 5px;
+    gap: 5px;
     
     @include for-desktop{
         flex-wrap: wrap;

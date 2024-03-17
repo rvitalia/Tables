@@ -25,6 +25,7 @@
     line-height: 125%;
     color: #efefef;
     padding: 10px 15px;
+    cursor: pointer;
 }
 
 .header__inner__item{
@@ -54,7 +55,7 @@
         font-weight: 600;
         font-size: 26px;
         line-height: 138%;
-        color: rgba(25, 25, 25, 0.8);
+        color: rgba(25, 25, 25, 0.5);
 
         @include mobile{
             font-size: 18px;
@@ -69,11 +70,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 160px;
+    text-align: center;
 
   }
   .options-list {
     list-style-type: none;
-    padding: 0;
+    padding: 15px 0;
+    border-radius: 10px;
     margin: 0;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
@@ -93,30 +97,44 @@
 
     & li{
         display: flex;
-        justify-content: space-between;
+        transition: all 0.3s linear;
+        padding: 1px 5px;
+
+        &:hover{
+            background-color: rgba(grey, 0.3) ;
+        }
     }
   }
   .option {
     padding: 8px 12px;
     cursor: pointer;
   }
-//   .option:hover {
-//     background-color: #e0f2f1;
-//   }
- /* Стили для чекбокса */
-//  .checkbox {
-//     position: absolute;
-//     left: 0;
-//     opacity: 0;
-//   }
-//   .checkbox + label {
-//     cursor: pointer;
-//     padding-left: 20px;
-//     position: relative;
-//   }
-//   .checkbox:checked + label::before {
-//     content: "\2714"; /* Unicode символ галочки */
-//     display: inline-block;
-//     position: absolute;
-//     left: 0;
-//   }
+/* Скрытие стандартного чекбокса */
+.checkbox {
+    display: none;
+}
+
+/* Стилизация внешнего вида нового чекбокса */
+.checkbox + label.option:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Изменение внешнего вида чекбокса при его выборе */
+.checkbox:checked + label.option:before {
+    background-color: greenyellow;
+}
+
+/* Стилизация текста метки */
+.option {
+    vertical-align: middle;
+}
+
