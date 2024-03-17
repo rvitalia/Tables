@@ -76,7 +76,7 @@
   }
   .options-list {
     list-style-type: none;
-    padding: 15px 0;
+    padding: 10px 0;
     border-radius: 10px;
     margin: 0;
     border: 1px solid #ccc;
@@ -98,7 +98,7 @@
     & li{
         display: flex;
         transition: all 0.3s linear;
-        padding: 1px 5px;
+        padding: 1px 10px 1px 5px;
 
         &:hover{
             background-color: rgba(grey, 0.3) ;

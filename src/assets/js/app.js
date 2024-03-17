@@ -5,9 +5,9 @@
  const optionsList = document.querySelector('.options-list');
 
  selectContainer.addEventListener('click', function(event) {
-   if (!event.target.classList.contains('checkbox')) {
+  //  if (!event.target.classList.contains('checkbox')) {
      optionsList.style.display = (optionsList.style.display === 'block') ? 'none' : 'block';
-   }
+  //  }
  });
 
  checkboxes.forEach(function(checkbox) {
