@@ -8,3 +8,9 @@
     border-radius: 7px;
     padding: 30px 25px 22px 35px;
 }
+.third__inner__top{
+    transition: all 0.3s linear;
+  }
+  .active.third__inner__top{
+    transform: rotate(180deg);
+  }

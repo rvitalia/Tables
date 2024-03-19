@@ -14,12 +14,17 @@
     &>li {
         border-radius: 7px;
         padding: 28px 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-align-items: flex-start;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: flex-start;
+// align-items: flex-start;
         background: #eaf9ff;
 
+& .flex{
+    display: flex;
+    align-items: flex-end;
+    column-gap: 10px;
+}
         @include for-desktop{
             flex: 1 !important;
             flex-shrink: 0 !important;
@@ -34,7 +39,18 @@ align-items: flex-start;
     font-size: 30px;
     line-height: 117%;
     text-align: center;
-    color: #2952b0;
+    color: #2952b0;    
+    display: flex; 
+    align-items: flex-start;
+    
+    &::after{
+        width: 12px;
+        height: 12px;
+        content: url('data:image/svg+xml,%3Csvg%20width=%2213%22%20height=%2212%22%20viewBox=%220%200%2013%2012%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Cpath%20d=%22M1.83203%2011L11.832%201M11.832%201V8.59209M11.832%201H4.23994%22%20stroke=%22#29B070%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%20/%3E%20%3C/svg%3E');
+        margin-left: 5px;
+        position: relative;
+        top: -10px;
+    }
 }
 
 .price__inner__desc {
@@ -45,6 +61,7 @@ align-items: flex-start;
     color: #2952b0;
     text-align: left;
     margin-top: 5px;
+    white-space: nowrap;
 }
 
 .price__inner__percent {
@@ -54,13 +71,4 @@ align-items: flex-start;
     text-align: center;
     color: #29b070;
     text-align: left;
-
-    display: flex; 
-
-    &::before{
-        width: 12px;
-        height: 12px;
-        content: url('data:image/svg+xml,%3Csvg%20width=%2213%22%20height=%2212%22%20viewBox=%220%200%2013%2012%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Cpath%20d=%22M1.83203%2011L11.832%201M11.832%201V8.59209M11.832%201H4.23994%22%20stroke=%22#29B070%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%20/%3E%20%3C/svg%3E');
-        margin-right: 5px;
-    }
 }

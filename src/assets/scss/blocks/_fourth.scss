@@ -43,6 +43,7 @@
 .hidden {
     opacity: 0; /* Делаем блок невидимым */
     max-height: 0; /* Устанавливаем нулевую высоту */
+    height: 0;
   }
 
   .insert{
@@ -62,12 +63,15 @@
     text-align: center;
     animation: fillBackground 5s ease forwards; /* Анимация смены ширины */
     white-space: nowrap;
+    border-radius: 10px;
   }
   @keyframes fillBackground {
     0% {
       width: 0%; /* Начальная ширина: нулевая */
+      color: transparent;
     }
     100% {
       width: 100%; /* Конечная ширина: 100% */
+      color: white;
     }
   }

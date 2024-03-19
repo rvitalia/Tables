@@ -69,6 +69,6 @@ if(buttonHidden){
     document.querySelector('[data-hidden]').addEventListener('click', function() {
           const block = document.querySelector('[data-block]');
           block.classList.toggle('hidden');    
-          buttonHidden.style.transform = 'rotate(180deg)'; // Поворачиваем элемент на 180 градусов
+          buttonHidden.classList.toggle('active'); // Поворачиваем элемент на 180 градусов
         });
 }
