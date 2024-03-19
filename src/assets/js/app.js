@@ -64,4 +64,11 @@ priceInners.forEach(priceInner => {
     }
 });
 
-
+let buttonHidden = document.querySelector('[data-hidden]');
+if(buttonHidden){
+    document.querySelector('[data-hidden]').addEventListener('click', function() {
+          const block = document.querySelector('[data-block]');
+          block.classList.toggle('hidden');    
+          buttonHidden.style.transform = 'rotate(180deg)'; // Поворачиваем элемент на 180 градусов
+        });
+}

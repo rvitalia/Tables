@@ -1,9 +1,15 @@
-.fourth {}
+.fourth {
+    display: block;
+  transition: opacity 0.5s ease; /* Добавляем плавную анимацию */
+  opacity: 1;
+//   max-height: 200px; /* Начальная высота */
+//   overflow: hidden;
+}
 
 .fourth__inner {
     display: grid;
-    grid-template-columns: 33% 67%;
-    gap: 8px;
+    grid-template-columns: 33% 66.2%;
+    gap: 0.8% ;
 
     @include for-desktop{
      display: flex;
@@ -33,3 +39,35 @@
 .fourth__inner__link {}
 
 .fourth__inner__download {}
+
+.hidden {
+    opacity: 0; /* Делаем блок невидимым */
+    max-height: 0; /* Устанавливаем нулевую высоту */
+  }
+
+  .insert{
+  position: relative;
+  }
+
+  .fourth__inner__top__loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 1;
+    display: block;
+    background-color: #0072F0;
+    font-size: 16px;
+    padding: 10px 18px;
+    text-align: center;
+    animation: fillBackground 5s ease forwards; /* Анимация смены ширины */
+    white-space: nowrap;
+  }
+  @keyframes fillBackground {
+    0% {
+      width: 0%; /* Начальная ширина: нулевая */
+    }
+    100% {
+      width: 100%; /* Конечная ширина: 100% */
+    }
+  }
