@@ -1,5 +1,6 @@
 .header {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-top: -20px;
 }
 
 .header__inner {
@@ -9,7 +10,7 @@
     align-items: center;
 
 
-    @include for-desktop{
+    @include for-desktop {
         flex-wrap: wrap;
         row-gap: 15px;
         justify-content: space-around;
@@ -28,7 +29,7 @@
     cursor: pointer;
 }
 
-.header__inner__item{
+.header__inner__item {
     display: flex;
     column-gap: 30px;
 }
@@ -43,27 +44,8 @@
     line-height: 125%;
 }
 
-.header__inner__title {
-    display: flex;
-    column-gap: 60px;
-
-    @include mobile{
-        column-gap: 20px;
-    }
-
-    & li {
-        font-weight: 600;
-        font-size: 26px;
-        line-height: 138%;
-        color: rgba(25, 25, 25, 0.5);
-
-        @include mobile{
-            font-size: 18px;
-        }
-    }
-}
- /* Стили для селекта */
- .select-container {
+/* Стили для селекта */
+.select-container {
     position: relative;
     // min-width: 200px;
     // border: 1px solid #c6c6c6;
@@ -73,8 +55,9 @@
     min-width: 160px;
     text-align: center;
 
-  }
-  .options-list {
+}
+
+.options-list {
     list-style-type: none;
     padding: 10px 0;
     border-radius: 10px;
@@ -90,33 +73,35 @@
     left: 0;
     min-width: max-content;
     z-index: 100;
-   
 
-    & li+li{
+
+    & li+li {
         margin-top: 10px;
     }
 
-    & li{
+    & li {
         display: flex;
         transition: all 0.3s linear;
         padding: 1px 10px 1px 5px;
 
-        &:hover{
-            background-color: rgba(grey, 0.3) ;
+        &:hover {
+            background-color: rgba(grey, 0.3);
         }
     }
-  }
-  .option {
+}
+
+.option {
     padding: 8px 12px;
     cursor: pointer;
-  }
+}
+
 /* Скрытие стандартного чекбокса */
 .checkbox {
     display: none;
 }
 
 /* Стилизация внешнего вида нового чекбокса */
-.checkbox + label.option:before {
+.checkbox+label.option:before {
     content: '';
     display: inline-block;
     width: 20px;
@@ -130,7 +115,7 @@
 }
 
 /* Изменение внешнего вида чекбокса при его выборе */
-.checkbox:checked + label.option:before {
+.checkbox:checked+label.option:before {
     background-color: greenyellow;
 }
 
@@ -139,3 +124,119 @@
     vertical-align: middle;
 }
 
+.header__inner__nav>li {
+    position: relative;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    & ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        /* Отображаем меню с самого левого края */
+        z-index: 100;
+        /* Устанавливаем z-index больше, чем у самого меню */
+        width: max-content;
+        /* Убираем фиксированную ширину */
+        white-space: nowrap;
+        display: none;
+        border-radius: 7px;
+        padding: 10px;
+        background: #fff;
+        opacity: 0;
+        transition: opacity 0.3s, max-height 0.3s ease;
+        /* Добавляем анимацию */
+        max-height: 0;
+        /* Начальное состояние: свернуто */
+        overflow: hidden;
+        /* Скрываем содержимое за границами */
+    }
+
+    &:hover ul {
+        display: block;
+        opacity: 1;
+        max-height: 500px;
+        /* Максимальная высота при разворачивании */
+    }
+
+    &:nth-child(2) {
+        & ul {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &:nth-child(3) {
+        & ul {
+            right: 0;
+            left: unset;
+        }
+    }
+
+    & li>a {
+        transition: all 0.3s linear;
+        padding-left: 19px;
+        position: relative;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    & li>a::before {
+        content: "";
+        width: 6px;
+        height: 26px;
+        border-radius: 7px;
+        background: #0072f0;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+        transition: opacity 0.3s linear;
+    }
+
+    & li:not(:last-child) {
+        margin-bottom: 25px;
+    }
+
+    & li>a:hover {
+        color: #0072f0;
+    }
+
+    & li>a:hover::before {
+        opacity: 1;
+    }
+}
+
+.header__inner__nav {
+    display: flex;
+    column-gap: 60px;
+}
+
+.header__inner__nav li {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1;
+    color: rgb(25, 25, 25);
+    transition: color 0.3s linear;
+
+    &:hover {
+        color: #0072F0;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .header__inner__nav {
+        column-gap: 20px;
+    }
+
+    .header__inner__nav li {
+        font-size: 18px;
+    }
+}
